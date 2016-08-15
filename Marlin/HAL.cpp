@@ -31,6 +31,7 @@
 #include "HAL.h"
 #include "macros.h"
 #include "Configuration.h"
+#include "Marlin.h"
 
 #include <Wire.h>
 

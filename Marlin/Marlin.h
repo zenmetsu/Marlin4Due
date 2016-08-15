@@ -30,17 +30,23 @@
 #include <string.h>
 #include <inttypes.h>
 
-#include <util/delay.h>
-#include <avr/pgmspace.h>
-#include <avr/eeprom.h>
-#include <avr/interrupt.h>
-
 #include "HAL.h"
 
-#include "enum.h"
+#ifndef _HAL_H
+  #include <util/delay.h>
+  #include <avr/eeprom.h>
+  
+
+  
+#endif
+#include <avr/pgmspace.h>
+#include <avr/interrupt.h>
+
 #include "types.h"
-#include "fastio.h"
+#include "enum.h"
 #include "utility.h"
+#include "fastio.h"
+
 
 /*
 #include "pins.h"
