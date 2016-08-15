@@ -41,7 +41,7 @@
 // --------------------------------------------------------------------------
 
 #define analogInputToDigitalPin(IO) IO
-#define FORCE_INLINE __attribute__((always_inline)) inline
+//#define FORCE_INLINE __attribute__((always_inline)) inline
 
 #define     CRITICAL_SECTION_START	uint32_t primask=__get_PRIMASK(); __disable_irq();
 #define     CRITICAL_SECTION_END    if (primask==0) __enable_irq();

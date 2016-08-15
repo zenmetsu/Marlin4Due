@@ -4,7 +4,10 @@
 * for RAMPS-FD
 ****************************************************************************************/
 
-//
+#ifndef BOARD_NAME
+  #define BOARD_NAME "RAMPS FD"
+#endif
+
 #if MB(RAMPS_FD_V1)
   #define INVERTED_HEATER_PINS
   #define INVERTED_MOSFET_CHANNELS
@@ -51,7 +54,7 @@
 #define SDSS               4
 #define LED_PIN            13
 
-#define BEEPER             -1
+#define BEEPER_PIN         -1
 
 #define FAN_PIN            10 //fet3
 
@@ -106,7 +109,7 @@
       #define LCD_PINS_D7 29
 
       #ifdef REPRAP_DISCOUNT_SMART_CONTROLLER
-        #define BEEPER 37
+        #define BEEPER_PIN 37
 
         #define BTN_EN1 33
         #define BTN_EN2 31
@@ -118,7 +121,7 @@
         #define BTN_EN1 31
         #define BTN_EN2 33
         #define BTN_ENC 35
-        #define BEEPER -1
+        #define BEEPER_PIN -1
         #define LCD_SDSS 49
         #define SDCARDDETECT 37
         #define KILL_PIN 39

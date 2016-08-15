@@ -1,5 +1,6 @@
 /**
- * Marlin Firmware
+ * Marlin 3D Printer Firmware
+ * Copyright (C) 2016 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (C) 2011 Camiel Gubbels / Erik van der Zalm
@@ -17,6 +18,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
+ */
+
+/**
  * About Marlin
  *
  * This firmware is a mashup between Sprinter and grbl.
@@ -30,18 +34,23 @@
 /* All the implementation is done in *.cpp files to get better compatibility with avr-gcc without the Arduino IDE */
 /* Use this file to help the Arduino IDE find which Arduino libraries are needed and to keep documentation on GCode */
 
+#include "MarlinConfig.h"
 #include "Configuration.h"
 #include "pins.h"
 
-#ifdef ULTRA_LCD
-  #if defined(LCD_I2C_TYPE_PCF8575)
+#if ENABLED(ULTRA_LCD)
+  #if ENABLED(LCD_I2C_TYPE_PCF8575)
     #include <Wire.h>
     #include <LiquidCrystal_I2C.h>
-  #elif defined(LCD_I2C_TYPE_MCP23017) || defined(LCD_I2C_TYPE_MCP23008)
+  #elif ENABLED(LCD_I2C_TYPE_MCP23017) || ENABLED(LCD_I2C_TYPE_MCP23008)
     #include <Wire.h>
     #include <LiquidTWI2.h>
-  #elif defined(DOGLCD)
-    #include <U8glib.h> // library for graphics LCD by Oli Kraus (https://code.google.com/p/u8glib/)
+  #elif ENABLED(LCM1602)
+    #include <Wire.h>
+    #include <LCD.h>
+    #include <LiquidCrystal_I2C.h>
+  #elif ENABLED(DOGLCD)
+    #include <U8glib.h> // library for graphics LCD by Oli Kraus (https://github.com/olikraus/U8glib_Arduino)
   #else
     #include <LiquidCrystal.h> // library for character LCD
   #endif
@@ -53,4 +62,14 @@
 
 #if defined(DIGIPOT_I2C)
   #include <Wire.h>
+#endif
+
+#if ENABLED(HAVE_TMCDRIVER)
+  #include <SPI.h>
+  #include <TMC26XStepper.h>
+#endif
+
+#if ENABLED(HAVE_L6470DRIVER)
+  #include <SPI.h>
+  #include <L6470.h>
 #endif

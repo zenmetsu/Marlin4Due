@@ -29,6 +29,7 @@
 // --------------------------------------------------------------------------
 
 #include "HAL.h"
+#include "macros.h"
 #include "Configuration.h"
 
 #include <Wire.h>

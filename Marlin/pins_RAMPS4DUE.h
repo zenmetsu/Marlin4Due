@@ -4,6 +4,10 @@
 * for RAMPS4DUE (http://forums.reprap.org/read.php?219,479626,page=1)
 ****************************************************************************************/
 
+#ifndef BOARD_NAME
+  #define BOARD_NAME "RAMPS for Due"
+#endif
+
 #define X_STEP_PIN         54
 #define X_DIR_PIN          55
 #define X_ENABLE_PIN       38
@@ -142,7 +146,7 @@
 
 
     #ifdef REPRAP_DISCOUNT_SMART_CONTROLLER
-      #define BEEPER 37
+      #define BEEPER_PIN 37
 
       #define BTN_EN1 31
       #define BTN_EN2 33
@@ -154,7 +158,7 @@
         #define BTN_EN1 31
         #define BTN_EN2 33
         #define BTN_ENC 35
-        #define BEEPER -1
+        #define BEEPER_PIN -1
         #define LCD_SDSS 49
         #define SDCARDDETECT 37
         #define KILL_PIN 39
@@ -174,7 +178,7 @@
       #define SDCARDDETECT 49
     #else
       // arduino pin which triggers an piezzo beeper
-      #define BEEPER 33  // Beeper on AUX-4
+      #define BEEPER_PIN 33  // Beeper on AUX-4
 
       // buttons are directly attached using AUX-2
       #ifdef REPRAPWORLD_KEYPAD
@@ -204,7 +208,7 @@
 
   #else // Old-style panel with shift register
     // Arduino pin witch triggers an piezzo beeper
-    #define BEEPER 33   // No Beeper added
+    #define BEEPER_PIN 33   // No Beeper added
 
     // Buttons are attached to a shift register
     // Not wired yet
