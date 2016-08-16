@@ -2,6 +2,9 @@
 <img align="right" src="Documentation/Logo/Marlin%20Logo%20GitHub.png" />
 
 ### Story about Marlin 32bit
+
+*UPDATE* I am making an effort to bring this code current to the current 1.1.0 release candidate.  As is, will not compile, but I'm a bit of a C++ noob, so patience please.  Thanks.  *zenmetsu*
+
 Story is currently over. I will not make any new updates. Maybe you could try other forks or take this work and make your own update. There were a lot of guys how take this and make their own version. 
 
 Thanks again to bobc even if he was unlucky when I've started with this.
